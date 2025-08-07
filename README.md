@@ -19,17 +19,20 @@ It uses **Retrieval-Augmented Generation (RAG)** to handle reports that exceed L
 
 ## 📂 Folder Structure
 MedXAI/
-├── app.py
-├── utils/
-│ ├── pdf_parser.py
-│ ├── splitter.py
-│ ├── vector_store.py
-│ └── qa_engine.py
+├── app.py                         # Main Streamlit app entrypoint
+├── .env                           # Stores your OpenAI API key
+├── requirements.txt               # All Python dependencies
+├── README.md                      # Project documentation
+
 ├── prompts/
-│ └── interpretation.txt
-├── .env
-├── requirements.txt
-└── README.md
+│   └── interpretation.txt         # System prompt to guide GPT medical behavior
+
+├── utils/
+│   ├── pdf_parser.py              # Extracts text from uploaded PDF reports
+│   ├── splitter.py                # Splits long reports into manageable text chunks
+│   ├── vector_store.py            # Embeds chunks and retrieves relevant ones using FAISS
+│   └── qa_engine.py               # Sends user queries + context to GPT-4 for interpretation
+
 
 ---
 
